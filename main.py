@@ -14,6 +14,7 @@ from bass import bass32,bass64
 from xor import xor
 from long_byte import long_byte
 from rsapq import rsapq
+from factordb import factordb
 
 client = discord.Client()
 
@@ -56,6 +57,8 @@ async def on_message(message):
       await message.channel.send(xor(i.split(' ')[2],i.split(' ')[3]))
     if i.find('rsapq')!=-1:
       await message.channel.send(rsapq(i.split(' ')[2],i.split(' ')[3],i.split(' ')[4],i.split(' ')[5]))
+    if i.find('factordb')!=-1:
+      await message.channel.send(factordb(i.split(' ')[2]))
   if i.find('#request')!= -1:
     await message.channel.send('testing')
    
