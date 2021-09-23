@@ -9,12 +9,7 @@ from get_quote import get_quote
 from screenshot import screenshot
 from shorturl import shorturl
 from get_weather import get_weather
-from bass import bass32,bass64
-from xor import xor
-from long_byte import long_byte
-from rsapq import rsapq
-from factordb import factordb
-from hex2ascii import hex2ascii
+from decodes import *
 
 client = discord.Client()
 
@@ -61,6 +56,8 @@ async def on_message(message):
       await message.channel.send(factordb(i.split(' ')[2]))
     if i.find('hex2ascii')!=-1:
       await message.channel.send(hex2ascii(i.split(' ')[2]))
+    if i.find('dec2ascii')!=-1:
+      await message.channel.send(dec2ascii(i.split(' ')[2:]))
   if i.find('#request')!= -1:
     await message.channel.send('testing')
    
