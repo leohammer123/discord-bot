@@ -10,6 +10,8 @@ from screenshot import screenshot
 from shorturl import shorturl
 from get_weather import get_weather
 from decodes import *
+from discord.ext import commands
+
 
 client = discord.Client()
 intents = discord.Intents.default()
@@ -23,6 +25,11 @@ async def on_ready():
   game = discord.Game('#help')
     #discord.Status.<狀態>，可以是online,offline,idle,dnd,invisible
   await client.change_presence(status=discord.Status.online, activity=game)
+  guild = client.get_guild(channel_id)
+  with open('log','a') as s:
+    for r in guild.members:
+      s.write(str(r)+'\n')
+
 
 @client.event
 async def on_message_join(member):
@@ -70,8 +77,13 @@ async def on_message(message):
       await message.channel.send(hex2ascii(i.split(' ')[2]))
     if i.find('dec2ascii')!=-1:
       await message.channel.send(dec2ascii(i.split(' ')[2:]))
-  
-   
+  if i.startswith('test'):
+    #names = list()
+    #for user in Guild.members:
+      #names.append(user.name)
+    #print(names)
+    guild = client.get_guild(channel_id)
+    print(guild.members)
 
 client.run(os.getenv('TOKEN'))
 
