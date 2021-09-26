@@ -49,6 +49,7 @@ async def on_message(message):
   if i.startswith('flag{'):
     if flag_check(i,message.author):
       await message.channel.send('Congrat !!!! You solve the challenge.')
+
     else:
       await message.channel.send('It seems to have some problem with ur flag.')
   if i.startswith("#help") and i.find('ctf')==-1:
@@ -95,9 +96,8 @@ async def on_message(message):
     print(guild.members)
   if i.startswith('#challenge'):
     if i.find('1')!=-1:
-      await message.channel.send('This is the most uncomplicated web challenge -->  https://challenge1002.000webhostapp.com')
+      await message.channel.send('1: This is the most uncomplicated web challenge -->  https://challenge1002.000webhostapp.com\n2: Another web challenge --> https://challenge222324.w3spaces.com/\n3: Wanna get a rick roll ? --> https://leohammer123.github.io/python-package-test/1.html')
 
-client.run('ODg3Njc2MDQzMTk0OTI1MDk2.YUHmvA.sbWFVkJJ_MSYO03ljHB8DC2NaEg')
 
 
 
