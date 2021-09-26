@@ -1,4 +1,4 @@
-from Crypto.Util.number import * 
+from crypto.Util.number import * 
 import requests
 import json
 import codecs

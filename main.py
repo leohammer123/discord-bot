@@ -1,8 +1,11 @@
+from challenge.flag_validate import flag_check
 import sys
 sys.path.insert(1, './api/')
 sys.path.insert(1, './ctftool/')
+sys.path.insert(1, './challenge/')
 
 
+import hashlib
 import discord
 import os
 from get_quote import get_quote
@@ -11,7 +14,7 @@ from shorturl import shorturl
 from get_weather import get_weather
 from decodes import *
 from discord.ext import commands
-
+from challenge import *
 
 client = discord.Client()
 intents = discord.Intents.default()
@@ -42,6 +45,12 @@ async def on_message_join(member):
 async def on_message(message):
   i = message.content
   print(message.content)
+  print(message.author)
+  if i.startswith('flag{'):
+    if flag_check(i,message.author):
+      await message.channel.send('Congrat !!!! You solve the challenge.')
+    else:
+      await message.channel.send('It seems to have some problem with ur flag.')
   if i.startswith("#help") and i.find('ctf')==-1:
     await message.channel.send("1. ctftool : A set of ctf tool.\n2. api : Some useful api.\n3. sendbox : Run a python send box online\n4. challenge : Some eazy ctf challenge." )
     i = ''
@@ -84,8 +93,11 @@ async def on_message(message):
     #print(names)
     guild = client.get_guild(channel_id)
     print(guild.members)
+  if i.startswith('#challenge'):
+    if i.find('1')!=-1:
+      await message.channel.send('This is the most uncomplicated web challenge -->  https://challenge1002.000webhostapp.com')
 
-client.run(os.getenv('TOKEN'))
+client.run('ODg3Njc2MDQzMTk0OTI1MDk2.YUHmvA.sbWFVkJJ_MSYO03ljHB8DC2NaEg')
 
 
 
