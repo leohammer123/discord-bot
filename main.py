@@ -1,3 +1,5 @@
+from discord import channel
+from discord.flags import MessageFlags
 from challenge.flag_validate import flag_check
 import sys
 sys.path.insert(1, './api/')
@@ -49,9 +51,11 @@ async def on_message(message):
   if i.startswith('flag{'):
     if flag_check(i,message.author):
       await message.channel.send('Congrat !!!! You solve the challenge.')
+      await message.delete()
 
     else:
       await message.channel.send('It seems to have some problem with ur flag.')
+      await message.delete()
   if i.startswith("#help") and i.find('ctf')==-1:
     await message.channel.send("1. ctftool : A set of ctf tool.\n2. api : Some useful api.\n3. sendbox : Run a python send box online\n4. challenge : Some eazy ctf challenge." )
     i = ''
@@ -96,9 +100,43 @@ async def on_message(message):
     print(guild.members)
   if i.startswith('#challenge'):
     if i.find('1')!=-1:
-      await message.channel.send('1: This is the most uncomplicated web challenge -->  https://challenge1002.000webhostapp.com\n2: Another web challenge --> https://challenge222324.w3spaces.com/\n3: Wanna get a rick roll ? --> https://leohammer123.github.io/python-package-test/1.html')
+      embed=discord.Embed(title="challenge1", url="https://challenge222324.w3spaces.com/", description="First web challenge ：）", color=0x781717)
+      embed.set_author(name="e04qqq", icon_url="https://avatars.githubusercontent.com/u/66953227?s=40&v=4")
+      embed.add_field(name="Difficulty", value="eazy", inline=True)
+      embed.add_field(name="Category ", value="web", inline=True)
+      embed.set_footer(text="https://challenge222324.w3spaces.com/")
+      await message.channel.send(embed=embed)
+    if i.find('2')!=-1:
+      embed=discord.Embed(title="challenge2", url="https://challenge1002.000webhostapp.com/c1/", description="This is a only about php.", color=0x781717)
+      embed.set_author(name="e04qqq", icon_url="https://avatars.githubusercontent.com/u/66953227?s=40&v=4")
+      embed.add_field(name="Difficulty", value="eazy", inline=True)
+      embed.add_field(name="Category ", value="web", inline=True)
+      embed.set_footer(text="https://challenge1002.000webhostapp.com/c1/")
+      await message.channel.send(embed=embed)
+    if i.find('3')!=-1:
+      embed=discord.Embed(title="challenge3", url="https://leohammer123.github.io/python-package-test/1.html", description="if you wanna get rickrolled -->", color=0x781717)
+      embed.set_author(name="e04qqq", icon_url="https://avatars.githubusercontent.com/u/66953227?s=40&v=4")
+      embed.add_field(name="Difficulty", value="eazy", inline=True)
+      embed.add_field(name="Category ", value="web", inline=True)
+      embed.set_footer(text="https://leohammer123.github.io/python-package-test/1.html")
+      await message.channel.send(embed=embed)
+    if i.find('4')!=-1:
+      embed=discord.Embed(title="challenge4", description="bass64 ", color=0x781717)
+      embed.set_author(name="e04qqq", icon_url="https://avatars.githubusercontent.com/u/66953227?s=40&v=4")
+      embed.add_field(name="Difficulty", value="eazy", inline=True)
+      embed.add_field(name="Category ", value="crypto", inline=True)
+      embed.set_footer(text="ZmxhZ3tiYXNlNjRfaXNfbm90X2FuX2VuY3J5cHRpb259==")
+      await message.channel.send(embed=embed)
+    if i.find('5')!=-1:
+      embed=discord.Embed(title="challenge5", url="https://raw.githubusercontent.com/leohammer123/python-package-test/main/threading/encrypt.py", description="This should be secure enough so i even give you my encrypt script.", color=0x781717)
+      embed.set_author(name="e04qqq", icon_url="https://avatars.githubusercontent.com/u/66953227?s=40&v=4")
+      embed.add_field(name="Difficulty", value="medium", inline=True)
+      embed.add_field(name="Category ", value="crypto", inline=True)
+      embed.set_footer(text="https://raw.githubusercontent.com/leohammer123/python-package-test/main/threading/encrypt.py")
+      await message.channel.send(embed=embed)
 
 
 
+client.run()
 
 
