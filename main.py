@@ -91,13 +91,6 @@ async def on_message(message):
       await message.channel.send(hex2ascii(i.split(' ')[2]))
     if i.find('dec2ascii')!=-1:
       await message.channel.send(dec2ascii(i.split(' ')[2:]))
-  if i.startswith('test'):
-    #names = list()
-    #for user in Guild.members:
-      #names.append(user.name)
-    #print(names)
-    guild = client.get_guild(channel_id)
-    print(guild.members)
   if i.startswith('#challenge'):
     if i.find('1')!=-1:
       embed=discord.Embed(title="challenge1", url="https://challenge222324.w3spaces.com/", description="First web challenge ：）", color=0x781717)
