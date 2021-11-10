@@ -1,23 +1,10 @@
-from discord import channel
-from discord.flags import MessageFlags
-from challenge.flag_validate import flag_check
-import sys
-sys.path.insert(1, './api/')
-sys.path.insert(1, './ctftool/')
-sys.path.insert(1, './challenge/')
-
-
-import hashlib
 import discord
-import os
-from get_quote import get_quote
-from screenshot import screenshot
-from shorturl import shorturl
-from get_weather import get_weather
-from decodes import *
-from discord.ext import commands
-from challenge import *
+from challenge.flag_validate import flag_check
+from api.basic_api import *
+from ctftool.decodes import *
+from controler import exp
 
+# Basic setting
 client = discord.Client()
 intents = discord.Intents.default()
 intents.members=True

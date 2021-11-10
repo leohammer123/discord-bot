@@ -76,4 +76,3 @@ def dec2ascii(num):
   for n in num:
     ascii_text+=chr(int(n))
   return ascii_text
-
