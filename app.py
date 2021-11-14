@@ -1,8 +1,4 @@
-from os import extsep
 import discord
-from challenge.flag_validate import flag_check
-from api.basic_api import *
-from ctftool.decode import *
 from controler import exp
 from discord.ext import commands
 
@@ -75,6 +71,5 @@ async def clear(ctx,*arg1):
   except Exception as e:
     await ctx.channel.send(f'Error : {e}')
 
+
 client.run()
-
-
