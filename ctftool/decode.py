@@ -4,7 +4,7 @@ import json
 import codecs
 import base64
 
-def rsapq(p,q,e,ct):
+def rsapq(p:int , q:int , e:int , ct:int) -> int:
   p = int(p)
   q = int(q)
   e = int(e)
@@ -27,11 +27,9 @@ def rsapq(p,q,e,ct):
   gcd, a, b = egcd(e, phi)
   d = a
   pt = pow(ct, d, n)
-  return str(pt)
+  return pt
 
-
-
-def factordb(n):
+def factordb(n:int) -> str:
   result = []
   status = 'Fail'
   n  = requests.get('http://factordb.com/api?query='+str(n))
@@ -44,34 +42,30 @@ def factordb(n):
 
   return result
 
-def hex2ascii(hex):
+def hex2ascii(hex:str)-> bytes:
   return codecs.decode(hex,'hex')
 
-def xor(plaintext,key):
+def xor(plaintext:str,key:str)->bytes:
   n = 0
   cipher = ''
   q = len(plaintext)%len(key)
   for r in plaintext:
     cipher += chr(ord(r)^ord(key[q]))
-    if not(chr(ord(r)^ord(key[q])).isprintable()):
-        n = 1
-  if n:
-        cipher = str(cipher.encode())
-  return cipher
+  return cipher.encode()
 
-def bass64(txt):
+def bass64(txt:str) ->str:
   return base64.b64decode(txt).decode()
 
-def bass32(txt):
+def bass32(txt:str)->str:
   return base64.b32decode(txt).decode()
 
-def long_byte(long):
+def long_byte(long:int)->bytes:
   return long_to_bytes(long)
 
-def byte_long(txt):
+def byte_long(txt:bytes)->int:
   return bytes_to_long(txt)
 
-def dec2ascii(num):
+def dec2ascii(num:int)->str:
   ascii_text = ''
   for n in num:
     ascii_text+=chr(int(n))

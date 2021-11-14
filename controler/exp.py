@@ -1,22 +1,85 @@
 import discord
-import json
+from discord import embeds
 
-
+from ctftool.decode import *
+from challenge.show import *
 def api_cmd(cmd):
-    return
-def tool_cmd(cmd):
-    return
-def challenge_cmd(cmd):
-    if(cmd.startswith('show')):
-        n = json.loads(open('controler\\data\\challenge_info.json','rb'))
-        cmd = cmd.replace('')
-        embed=discord.Embed(title=n["title"], url="https://challenge222324.w3spaces.com/", description="First web challenge ：）", color=0x781717)
-        embed.set_author(name="e04qqq", icon_url="https://avatars.githubusercontent.com/u/66953227?s=40&v=4")
-        embed.add_field(name="Difficulty", value="eazy", inline=True)
-        embed.add_field(name="Category ", value="web", inline=True)
-        embed.set_footer(text="https://challenge222324.w3spaces.com/")
-        
-        # await message.channel.send(embed=embed)
+    pass
+
+
+
+def tool_cmd(fc_name,*arg):
+    if fc_name == "base64":
+        try:
+            text = bass64(arg[0])
+        except Exception as e:
+            return e
+        return text
+    if fc_name == "dec2ascii":
+        try:
+            text = dec2ascii(int(arg[0]))
+        except Exception as e:
+            return e
+        return text
+    if fc_name == "rsapq":
+        try:
+            text = rsapq(int(arg[0]),int(arg[1]),int(arg[2]),int(arg[3]),int(arg[4]))
+        except Exception as e:
+            return e
+        return str(text)
+    if fc_name == "factordb":
+        try:
+            text = factordb(int(arg[0]))
+        except Exception as e:
+            return e
+        return text
+    if fc_name == "hex2ascii":
+        try:
+            text = hex2ascii(arg[0])
+        except Exception as e:
+            return e
+        return str(text)
+    if fc_name == "base32":
+        try:
+            text = bass32(arg[0])
+        except Exception as e:
+            return e
+        return text
+    if fc_name == "xor":
+        try:
+            text = xor(arg[0],arg[1])
+        except Exception as e:
+            return e
+        return text
+    if fc_name == "long_byte":
+        try:
+            text = long_byte(int(arg[0]))
+        except Exception as e:
+            return e
+        return str(text)
+    if fc_name == "byte_long":
+        try:
+            text = byte_long(arg[0].encode())
+        except Exception as e:
+            return e
+        return str(text)
+    if fc_name == "dec2ascii":
+        try:
+            text = dec2ascii(int(arg[0]))
+        except Exception as e:
+            return e
+        return text
+    
+    
+def challenge_cmd(fc_name,*arg):
+    if fc_name == "show":
+        try:
+            embed = show(int(arg[0]))
+        except Exception as e:
+            return e
+        return embed
+    if fc_name == "score":
+        pass
         
     
 def usage(cmd):
