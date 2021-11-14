@@ -10,7 +10,6 @@ channel_id = 692690549487960155
 @client.event
 async def on_ready():
   game = discord.Game('#help')
-    #discord.Status.<狀態>，可以是online,offline,idle,dnd,invisible
   await client.change_presence(status=discord.Status.online, activity=game)
 
 
