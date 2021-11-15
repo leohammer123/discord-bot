@@ -3,11 +3,39 @@ from discord import embeds
 
 from ctftool.decode import *
 from challenge.show import *
-def api_cmd(cmd):
-    pass
+from api.basic_api import *
 
-
-
+def api_cmd(fc_name,*arg):
+    if fc_name=="quote":
+        try:
+            text = get_quote()
+        except Exception as e:
+            return str(e)
+        return text
+    if fc_name == "screenshot":
+        try:
+            text = screenshot(str(arg[0]))
+        except Exception as e:
+            return e
+        return text
+    if fc_name == "weather":
+        try:
+            text = get_weather(arg[0])
+        except Exception as e:
+            return e
+        return text
+    if fc_name == "shorturl":
+        try:
+            text = shorturl(arg[0])
+        except Exception as e:
+            return e
+        return text
+    if fc_name == "release":
+        try:
+            text = release_challenge()
+        except Exception as e:
+            return e
+        return text
 def tool_cmd(fc_name,*arg):
     if fc_name == "base64":
         try:

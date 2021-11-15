@@ -1,8 +1,9 @@
+import os
 import requests
 import json
 
 
-def get_quote():
+def get_quote()->str:
   try:
     r = requests.get('https://zenquotes.io/api/random')
     json_data = json.loads(r.text)
@@ -12,7 +13,7 @@ def get_quote():
     return "error : "+str(e)
 
 
-def screenshot(url):
+def screenshot(url:str)->str:
   try:
     url = """https://api.browshot.com/api/v1/screenshot/create?key=V2ZByU9a7YOqGbsaJ54rsa21IgrpG5l&instance_id=26&url="""+url+"""&size=page&hide_popups=0&dark=0"""
     r = requests.get(url)
@@ -20,7 +21,7 @@ def screenshot(url):
   except Exception as e:
     return("error : "+ str(e))
 
-def shorturl(url):
+def shorturl(url:str)->str:
   re_url = 'https://api.shrtco.de/v2/shorten?url='+ url
   r = json.loads(requests.get(re_url).text)
   status = r['ok']
@@ -32,7 +33,7 @@ def shorturl(url):
   return final
 
 
-def get_weather(city):
+def get_weather(city :str)->str:
   url ="""http://api.weatherstack.com/current?access_key="""+os.getenv('weather token').replace('\n','')+"""&query="""+city
   r = requests.get(url.replace('\n',''))
   r = json.loads(r.text)
@@ -46,7 +47,12 @@ def get_weather(city):
   output = 'city : '+str(city)+'\n'+'tempature : '+str(temp)+'\n'+'weather_descriptions : '+str(des)[2:-2]+'\n'+'wind speed : '+str(wind_speed)+'\n'+'humidity : '+str(humid)+'\n'
   return output
 
-def release_challenge():
+def release_challenge()->str:
     r = requests.get('https://imaginaryctf.org/api/challenges/released')
-    r = json.load(r.text[0])
-    print(r)
+    r = json.loads(r.text)
+    text = "   title     category      points\n"
+    index = 1
+    for a in r:
+        text += f'{index}  {a["title"]}  {a["category"]}  {a["points"]}\n'
+        index += 1
+    return text

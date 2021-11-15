@@ -21,9 +21,17 @@ async def on_message_join(member):
     await channel.send(embed=embed)
 
 @client.command()
-async def api(ctx,arg1):
-  a = exp.api_cmd(ctx)
+async def api(ctx,*arg):
+  try:
+    arg1 = arg[0]
+    arg2 = arg[1] if len(arg)>1 else None
+    arg3 = arg[2] if len(arg)>2 else None
+    n = exp.api_cmd(arg1,arg2,arg3)
+    
+  except Exception as e:
+    await ctx.channel.send(str(e))
 
+  await ctx.channel.send(str(n))
 
 
 @client.command()
@@ -35,6 +43,7 @@ async def challenge(ctx,*arg):
     arg3 = arg[2] if len(arg)>2 else None
     n = exp.challenge_cmd(arg1,arg2,arg3)
     await ctx.channel.send(embed = n)
+    
   except Exception as e:
     await ctx.channel.send(str(e))
 
@@ -69,6 +78,7 @@ async def clear(ctx,*arg1):
     await ctx.channel.send('Error : argument not an int.')
   except Exception as e:
     await ctx.channel.send(f'Error : {e}')
+
 
 
 client.run()
