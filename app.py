@@ -31,7 +31,10 @@ async def api(ctx,*arg):
   except Exception as e:
     await ctx.channel.send(str(e))
 
-  await ctx.channel.send(str(n))
+  if type(n)!=type('str'):
+    await ctx.channel.send(file=discord.File(n,'test.png'))
+  else:  
+    await ctx.channel.send(str(n))
 
 
 @client.command()
@@ -81,4 +84,4 @@ async def clear(ctx,*arg1):
 
 
 
-client.run()
+client.run('token')
