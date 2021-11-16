@@ -36,6 +36,9 @@ def api_cmd(fc_name,*arg):
         except Exception as e:
             return e
         return text
+
+
+
 def tool_cmd(fc_name,*arg):
     if fc_name == "base64":
         try:
@@ -96,9 +99,7 @@ def tool_cmd(fc_name,*arg):
             text = dec2ascii(int(arg[0]))
         except Exception as e:
             return e
-        return text
-    
-    
+        return text   
 def challenge_cmd(fc_name,*arg):
     if fc_name == "show":
         try:
@@ -108,7 +109,5 @@ def challenge_cmd(fc_name,*arg):
         return embed
     if fc_name == "score":
         pass
-        
-    
 def usage(cmd):
     return

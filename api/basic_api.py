@@ -1,3 +1,4 @@
+import io
 import os
 import requests
 import json
@@ -13,14 +14,15 @@ def get_quote()->str:
     return "error : "+str(e)
 
 
-def screenshot(url:str)->str:
+def screenshot(url:str)->bytes:
   try:
-    url = """https://api.browshot.com/api/v1/screenshot/create?key=V2ZByU9a7YOqGbsaJ54rsa21IgrpG5l&instance_id=26&url="""+url+"""&size=page&hide_popups=0&dark=0"""
-    r = requests.get(url)
-    return(r.code)
+    url_1 = f'http://api.screenshotlayer.com/api/capture?access_key=4be0203452a15afba12ba1224744dee8&url={url}&viewport=1440x900&width=250'
+    res = requests.get(url_1,stream=True)
+    data = io.BytesIO(res.content)
   except Exception as e:
-    return("error : "+ str(e))
-
+    return str(e)
+  return data
+  
 def shorturl(url:str)->str:
   re_url = 'https://api.shrtco.de/v2/shorten?url='+ url
   r = json.loads(requests.get(re_url).text)
