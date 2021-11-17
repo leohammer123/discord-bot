@@ -1,4 +1,6 @@
+from io import BytesIO
 import discord
+from discord import channel
 from controler import exp
 from discord.ext import commands
 
@@ -27,16 +29,19 @@ async def api(ctx,*arg):
     arg2 = arg[1] if len(arg)>1 else None
     arg3 = arg[2] if len(arg)>2 else None
     n = exp.api_cmd(arg1,arg2,arg3)
-    
   except Exception as e:
     await ctx.channel.send(str(e))
-
-  if type(n)!=type('str'):
-    await ctx.channel.send(file=discord.File(n,'test.png'))
-  else:  
-    await ctx.channel.send(str(n))
-
-
+  
+  if type(n) == tuple:
+    for r in n:
+      if type(r)==type('str'):
+        await ctx.channel.send(str(r)) 
+      if type(r)==BytesIO:
+        await ctx.channel.send(file=discord.File(r,'test.png'))
+  if type(n)==type('str'):
+        await ctx.channel.send(str(n))
+  if type(n) == BytesIO:
+     await ctx.channel.send(file=discord.File(n,'test.png'))
 @client.command()
 async def challenge(ctx,*arg):
   try:
@@ -84,4 +89,4 @@ async def clear(ctx,*arg1):
 
 
 
-client.run('token')
+client.run()
