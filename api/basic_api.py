@@ -18,7 +18,7 @@ def screenshot(url:str)->bytes:
   try:
     url_1 = f'http://api.screenshotlayer.com/api/capture?access_key=4be0203452a15afba12ba1224744dee8&url={url}&viewport=1440x900&width=250'
     res = requests.get(url_1,stream=True)
-    data = io.BytesIO(res.content)
+    data = io.BytesIO(res.content) # Transfer bytes to fp
   except Exception as e:
     return str(e)
   return data

@@ -103,7 +103,7 @@ def tool_cmd(fc_name,*arg):
 def challenge_cmd(fc_name,*arg):
     if fc_name == "show":
         try:
-            embed = show(int(arg[0]))
+            embed = show(int(arg[0])) # typeof(embed) = Discord.Embed
         except Exception as e:
             return e
         return embed
