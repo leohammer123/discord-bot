@@ -1,17 +1,12 @@
 import discord
 from discord import embeds
-
+import random
 from ctftool.decode import *
 from challenge.show import *
 from api.basic_api import *
 
+
 def api_cmd(fc_name,*arg):
-    if fc_name=="quote":
-        try:
-            text = get_quote()
-        except Exception as e:
-            return str(e)
-        return text
     if fc_name == "screenshot":
         try:
             text = screenshot(str(arg[0]))
@@ -36,9 +31,22 @@ def api_cmd(fc_name,*arg):
         except Exception as e:
             return e
         return text
-
-
-
+    if fc_name == "random":
+        rand = random.randint(1,5)
+        if rand == 1:
+            text = Catfact()
+            return text
+        if rand == 2:
+            text,pic = RandomUser()
+            return text,pic
+        if rand == 3:
+            text = my_ip()
+            return text
+        if rand == 4:
+            text = get_quote()
+            return text
+        if rand == 5:
+            text = Dogpic()
 def tool_cmd(fc_name,*arg):
     if fc_name == "base64":
         try:

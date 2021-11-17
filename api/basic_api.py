@@ -1,5 +1,7 @@
 import io
 import os
+from types import resolve_bases
+from typing import Tuple
 import requests
 import json
 
@@ -58,3 +60,35 @@ def release_challenge()->str:
         text += f'{index}  {a["title"]}  {a["category"]}  {a["points"]}\n'
         index += 1
     return text
+  
+def RandomUser()->Tuple:
+  res = requests.get('https://randomuser.me/api/')
+  a = json.loads(res.text)
+  text = f'Hi my name is {a["results"][0]["name"]["first"]} {a["results"][0]["name"]["last"]}'
+  text += f'. I am a {a["results"][0]["gender"]},and I live in {a["results"][0]["location"]["country"]} {a["results"][0]["location"]["state"]} {a["results"][0]["location"]["city"]}.'
+  text += f'\nThis is my photo uwu'
+  print(text)
+  url = a["results"][0]['picture']['large']
+  pic = requests.get(url)
+  n = io.BytesIO(pic.content) 
+  return text,n
+    
+def Catfact()->str:
+  r = requests.get('https://catfact.ninja/fact')
+  js = json.loads(r.text)
+  return "Cat fact : "+js['fact']
+
+def Dogpic()->bytes:
+  r = requests.get('https://dog.ceo/api/breeds/image/random',stream=True)
+  pic = io.BytesIO(r.content)
+  return pic
+
+def my_ip()->str:
+  res = requests.get('https://api.ipify.org/?format=json')
+  res = json.loads(res.text)
+  return "My id address is "+res["ip"] + " Please hack me"
+
+def rand_activity()->str:
+  res = requests.get('https://www.boredapi.com/api/activity')
+  res = json.loads(res.text)
+  return res["activity"]
