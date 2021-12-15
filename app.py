@@ -1,3 +1,4 @@
+import os
 from io import BytesIO
 import discord
 from discord import channel
@@ -89,4 +90,4 @@ async def clear(ctx,*arg1):
 
 
 
-client.run()
+client.run(os.getenv('TOKEN'))
