@@ -2,3 +2,5 @@
 log
 tempCodeRunnerFile.py
 /build-env
+.gitignore
+/__pycache__

@@ -1,7 +1,9 @@
+import time
 import os
 from io import BytesIO
 import discord
 from discord import channel
+from discord import embeds
 from controler import exp
 from discord.ext import commands
 
@@ -50,8 +52,21 @@ async def challenge(ctx,*arg):
     arg1 = arg[0]
     arg2 = arg[1] if len(arg)>1 else None
     arg3 = arg[2] if len(arg)>2 else None
+    
+    
     n = exp.challenge_cmd(arg1,arg2,arg3)
-    await ctx.channel.send(embed = n)
+
+
+    if type(n)==discord.embeds.Embed:
+      await ctx.channel.send(embed=n)
+      
+      
+    if type(n)==type('str'):
+          await ctx.channel.send(str(n))
+          
+          
+    if type(n) == BytesIO:
+      await ctx.channel.send(file=discord.File(n,'test.png'))
     
   except Exception as e:
     await ctx.channel.send(str(e))

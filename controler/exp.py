@@ -1,35 +1,32 @@
-import discord
 from discord import embeds
 import random
 from ctftool.decode import *
 from challenge.show import *
 from api.basic_api import *
+from challenge.start import *
 
 
-def api_cmd(fc_name,*arg):
+
+def api_cmd(fc_name:str,*arg):
+    """api_cmd : Handle all api command
+
+    Args:
+        fc_name (str): Command name
+
+    Returns:
+        [str] or [bytes]: The result of executed command ,might return picture or text ,depends on the function
+    """
     if fc_name == "screenshot":
-        try:
             text = screenshot(str(arg[0]))
-        except Exception as e:
-            return e
-        return text
+            return text
     if fc_name == "weather":
-        try:
             text = get_weather(arg[0])
-        except Exception as e:
-            return e
-        return text
+            return text
     if fc_name == "shorturl":
-        try:
-            text = shorturl(arg[0])
-        except Exception as e:
-            return e
+        text = shorturl(arg[0])
         return text
     if fc_name == "release":
-        try:
-            text = release_challenge()
-        except Exception as e:
-            return e
+        text = release_challenge()
         return text
     if fc_name == "random":
         rand = random.randint(1,5)
@@ -47,75 +44,61 @@ def api_cmd(fc_name,*arg):
             return text
         if rand == 5:
             text = Dogpic()
+            
 def tool_cmd(fc_name,*arg):
     if fc_name == "base64":
-        try:
-            text = bass64(arg[0])
-        except Exception as e:
-            return e
+        text = bass64(arg[0])
         return text
+    
     if fc_name == "dec2ascii":
-        try:
-            text = dec2ascii(int(arg[0]))
-        except Exception as e:
-            return e
+        text = dec2ascii(int(arg[0]))
         return text
+    
     if fc_name == "rsapq":
-        try:
-            text = rsapq(int(arg[0]),int(arg[1]),int(arg[2]),int(arg[3]),int(arg[4]))
-        except Exception as e:
-            return e
-        return str(text)
+            text = str(rsapq(int(arg[0]),int(arg[1]),int(arg[2]),int(arg[3]),int(arg[4])))
+            return text
+        
     if fc_name == "factordb":
-        try:
-            text = factordb(int(arg[0]))
-        except Exception as e:
-            return e
+        text = factordb(int(arg[0]))
         return text
+    
     if fc_name == "hex2ascii":
-        try:
-            text = hex2ascii(arg[0])
-        except Exception as e:
-            return e
+        text = hex2ascii(arg[0])
         return str(text)
+    
     if fc_name == "base32":
-        try:
-            text = bass32(arg[0])
-        except Exception as e:
-            return e
+        text = bass32(arg[0])
         return text
+    
     if fc_name == "xor":
-        try:
-            text = xor(arg[0],arg[1])
-        except Exception as e:
-            return e
+        text = xor(arg[0],arg[1])
         return text
+    
     if fc_name == "long_byte":
-        try:
-            text = long_byte(int(arg[0]))
-        except Exception as e:
-            return e
+        text = long_byte(int(arg[0]))
         return str(text)
+    
     if fc_name == "byte_long":
-        try:
-            text = byte_long(arg[0].encode())
-        except Exception as e:
-            return e
+        text= byte_long(arg[0].encode())
         return str(text)
+    
     if fc_name == "dec2ascii":
-        try:
-            text = dec2ascii(int(arg[0]))
-        except Exception as e:
-            return e
-        return text   
+        text = dec2ascii(int(arg[0]))
+        return text 
+    
+    
 def challenge_cmd(fc_name,*arg):
+    
     if fc_name == "show":
-        try:
-            embed = show(int(arg[0])) # typeof(embed) = Discord.Embed
-        except Exception as e:
-            return e
+        embed = show(int(arg[0])) # typeof(embed) = Discord.Embed
         return embed
+    
     if fc_name == "score":
         pass
+    
+    if fc_name == "start":
+        text = start(int(arg[0]),arg[1])
+        return text
+    
 def usage(cmd):
     return

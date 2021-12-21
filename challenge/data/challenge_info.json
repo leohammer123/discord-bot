@@ -1,41 +1,54 @@
 [
     {
-        "title" : "challenge1",
+        "title" : "Secrect file",
         "author" : "e04qqq",
         "difficulty" : "eazy",
         "category" : "Web",
-        "description" : "First web challenge ：）",
+        "description" : "Find the flag in the secret file",
         "link" : "https://challenge222324.w3spaces.com/"
     },
     {
-        "title" : "challenge2",
+        "title" : "buy flag",
         "author" : "e04qqq",
         "difficulty" : "eazy",
         "category" : "Web",
-        "description" : "This is a only about php.",
+        "description" : "Go to the website and buy flag",
         "link" : "https://challenge1002.000webhostapp.com/c1/"
 
     },{
-        "title" : "challenge3",
+        "title" : "rickroll",
         "author" : "e04qqq",
         "difficulty" : "eazy",
         "category" : "Web",
-        "description" : "If you wanna get rickrolled -->",
+        "description" : "Don't click the link>",
         "link" : "https://leohammer123.github.io/python-package-test/1.html"
     },{
-        "title" : "challenge4",
+        "title" : "bass64",
         "author" : "e04qqq",
         "difficulty" : "eazy",
         "category" : "Crypto",
-        "description" : "bass64",
+        "description" : "WW91IGtub3cgaG93IHRvIHNvbHZlIHRoaXM=",
         "link" : "ZmxhZ3tiYXNlNjRfaXNfbm90X2FuX2VuY3J5cHRpb259=="
     },{
-        "title" : "challenge5",
+        "title" : "Super encryption",
         "author" : "e04qqq",
         "difficulty" : "medium",
         "category" : "Crypto",
-        "description" : "uwu",
+        "description" : "Online tool couldn't solve it ---",
         "link" : "https://raw.githubusercontent.com/leohammer123/python-package-test/main/threading/encrypt.py"
-
+    },{
+        "title":"It's your turn",
+        "author":"e04qqq",
+        "difficulty":"medium",
+        "category" : "Misc",
+        "description": "Just build a website ,I will give you the flag.",
+        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/6.py"
+    },{
+        "title":"Hackme",
+        "author":"e04qqq",
+        "difficulty":"medium",
+        "category":"Web",
+        "description":"Admin have the flag ,please hack him",
+        "link":"https://reverse-shell-test-1.herokuapp.com"
     }
 ]
