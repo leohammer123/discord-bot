@@ -3,7 +3,7 @@ from cookies import cookie
 
 
 url = input()
-cookie_dict = {"token":cookie}
+cookie_dict = {"token":cookie,"origin":"https://challenge1002.000webhostapp.com/c8"}
 
 
 

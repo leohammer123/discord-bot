@@ -22,5 +22,15 @@ def ch6(url:str)->str:
     except requests.exceptions.ConnectTimeout:
         return "Time out error"
     except Exception as e:
-        return e
+        return str(e)
     
+def ch8(url:str)->str:
+
+    cookie_dict = {"token":os.getenv('ch8-token'),"site":"https://challenge1002.000webhostapp.com/c8/"}
+    res = requests.get(url,cookies=cookie_dict)
+    
+    if res.status_code==200:
+        return "Server is online"
+    else:
+        return "sth are wrong"
+

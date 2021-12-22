@@ -25,3 +25,12 @@ def start(index:int,*args)->str:
         else:
             return str(res)
         
+    if index==8:
+        
+        res = ch8(args[0])
+        
+        if args[0]==None:
+            return "missing url"
+        
+        else:
+            return res

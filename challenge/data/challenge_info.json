@@ -5,7 +5,9 @@
         "difficulty" : "eazy",
         "category" : "Web",
         "description" : "Find the flag in the secret file",
-        "link" : "https://challenge222324.w3spaces.com/"
+        "link" : "https://challenge222324.w3spaces.com/",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },
     {
         "title" : "buy flag",
@@ -13,7 +15,9 @@
         "difficulty" : "eazy",
         "category" : "Web",
         "description" : "Go to the website and buy flag",
-        "link" : "https://challenge1002.000webhostapp.com/c1/"
+        "link" : "https://challenge1002.000webhostapp.com/c1/",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
 
     },{
         "title" : "rickroll",
@@ -21,34 +25,55 @@
         "difficulty" : "eazy",
         "category" : "Web",
         "description" : "Don't click the link>",
-        "link" : "https://leohammer123.github.io/python-package-test/1.html"
+        "link" : "https://leohammer123.github.io/python-package-test/1.html",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
         "title" : "bass64",
         "author" : "e04qqq",
         "difficulty" : "eazy",
         "category" : "Crypto",
         "description" : "WW91IGtub3cgaG93IHRvIHNvbHZlIHRoaXM=",
-        "link" : "ZmxhZ3tiYXNlNjRfaXNfbm90X2FuX2VuY3J5cHRpb259=="
+        "link" : "https://github.com/leohammer123/discord-bot/blob/master/challenge/src/ch3-cipher.txt",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
         "title" : "Super encryption",
         "author" : "e04qqq",
         "difficulty" : "medium",
         "category" : "Crypto",
         "description" : "Online tool couldn't solve it ---",
-        "link" : "https://raw.githubusercontent.com/leohammer123/python-package-test/main/threading/encrypt.py"
+        "link" : "https://raw.githubusercontent.com/leohammer123/python-package-test/main/threading/encrypt.py",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
         "title":"It's your turn",
         "author":"e04qqq",
         "difficulty":"medium",
         "category" : "Misc",
         "description": "Just build a website ,I will give you the flag.",
-        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/6.py"
+        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/6.py",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
-        "title":"Hackme",
+        "title":"Take Note",
         "author":"e04qqq",
-        "difficulty":"medium",
+        "difficulty":"eazy",
         "category":"Web",
-        "description":"Admin have the flag ,please hack him",
-        "link":"https://reverse-shell-test-1.herokuapp.com"
+        "description":"Admin have note the flag on the website",
+        "link":"https://reverse-shell-test-1.herokuapp.com",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
+    },{
+        
+        "title":"Free Website Down Checker",
+        "author":"e04qqq",
+        "difficulty":"eazy",
+        "category":"Web",
+        "description":"I made my own checker ,it can use to check if a website is online or not",
+        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/8.py",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
+        
     }
 ]
