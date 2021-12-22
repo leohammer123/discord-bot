@@ -1,9 +1,6 @@
-import time
 import os
 from io import BytesIO
 import discord
-from discord import channel
-from discord import embeds
 from controler import exp
 from discord.ext import commands
 
@@ -45,6 +42,7 @@ async def api(ctx,*arg):
         await ctx.channel.send(str(n))
   if type(n) == BytesIO:
      await ctx.channel.send(file=discord.File(n,'test.png'))
+     
 @client.command()
 async def challenge(ctx,*arg):
   try:
@@ -79,7 +77,7 @@ async def ctftool(ctx,*arg):
     arg1 = arg[0]
     arg2 = arg[1] if len(arg)>1 else None
     arg3 = arg[2] if len(arg)>2 else None
-    arg4 = arg[3] if len(arg)>3 else None
+    arg4 = arg[3] if len(arg)>3  else None
     arg5 = arg[4] if len(arg)>4 else None
     
     text = exp.tool_cmd(arg1,arg2,arg3,arg4,arg5)
@@ -96,6 +94,7 @@ async def clear(ctx,*arg1):
   try:
     num = arg1[0]
     await ctx.channel.purge(limit=int(num)+1)
+    
   except IndexError :
     await ctx.channel.send('Error : No arguement')
   except ValueError :

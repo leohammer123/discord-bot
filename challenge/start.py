@@ -1,4 +1,5 @@
-from challenge.scr import *
+from challenge.src import *
+
 
 def start(index:int,*args)->str:
     """Start function
@@ -11,20 +12,16 @@ def start(index:int,*args)->str:
     """
     
     
-    if index ==6:
+    if index ==6: # Challenge 6
+        
         res = ch6(args[0])
+        
         if args[0]==None:
             return "missing url"
-
-        if res==False:
-            return "solve"
-        
         elif res==True:
             return "Website content doesn't contain the word"
+        elif res==False:
+            return "Your website pass the test , I have already send you the flag"
         else:
             return str(res)
         
-
-    
-
-    

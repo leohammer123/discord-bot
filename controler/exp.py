@@ -1,4 +1,3 @@
-from discord import embeds
 import random
 from ctftool.decode import *
 from challenge.show import *
@@ -14,7 +13,7 @@ def api_cmd(fc_name:str,*arg):
         fc_name (str): Command name
 
     Returns:
-        [str] or [bytes]: The result of executed command ,might return picture or text ,depends on the function
+        [str] or [bytes]: Command output might return picture or text ,depends on the function
     """
     if fc_name == "screenshot":
             text = screenshot(str(arg[0]))
@@ -46,6 +45,14 @@ def api_cmd(fc_name:str,*arg):
             text = Dogpic()
             
 def tool_cmd(fc_name,*arg):
+    """tool_cmd : Handle all ctf tool command
+
+    Args:
+        fc_name [str]: Command name
+
+    Returns:
+        [str] : Command output
+    """
     if fc_name == "base64":
         text = bass64(arg[0])
         return text
@@ -101,4 +108,4 @@ def challenge_cmd(fc_name,*arg):
         return text
     
 def usage(cmd):
-    return
+    pass
