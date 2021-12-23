@@ -4,3 +4,4 @@ tempCodeRunnerFile.py
 /build-env
 .gitignore
 /__pycache__
+/.vscode

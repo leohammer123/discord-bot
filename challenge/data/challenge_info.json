@@ -43,7 +43,7 @@
         "difficulty" : "medium",
         "category" : "Crypto",
         "description" : "Online tool couldn't solve it ---",
-        "link" : "https://raw.githubusercontent.com/leohammer123/python-package-test/main/threading/encrypt.py",
+        "link" : "https://github.com/leohammer123/discord-bot/blob/master/challenge/src/4.py",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
@@ -75,5 +75,14 @@
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
         
+    },{
+        "title":"Not encryption",
+        "author":"e04qqq",
+        "difficulty":"medium",
+        "category":"Crypto",
+        "description":"Everyone knows xor encryption ,but do you know what is a not encryption",
+        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/9.py",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     }
 ]

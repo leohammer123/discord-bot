@@ -25,7 +25,7 @@ def start(index:int,*args)->str:
         else:
             return str(res)
         
-    if index==8:
+    if index==8:  # Challenge 8
         
         res = ch8(args[0])
         
@@ -34,3 +34,12 @@ def start(index:int,*args)->str:
         
         else:
             return res
+    
+        
+        
+        
+        
+    if index==None:
+        
+        return "missing index value"
+        

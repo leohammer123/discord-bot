@@ -43,6 +43,7 @@ async def api(ctx,*arg):
   if type(n) == BytesIO:
      await ctx.channel.send(file=discord.File(n,'test.png'))
      
+     
 @client.command()
 async def challenge(ctx,*arg):
   try:
