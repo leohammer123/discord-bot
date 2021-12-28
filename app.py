@@ -1,6 +1,7 @@
 import os
 from io import BytesIO
 import discord
+from discord.utils import async_all
 from controler import exp
 from discord.ext import commands
 
@@ -103,6 +104,27 @@ async def clear(ctx,*arg1):
   except Exception as e:
     await ctx.channel.send(f'Error : {e}')
 
+@client.command()
+async def submit(ctx,message):
+  
+  user = ctx.message.author
+  id = user.id
+  res = exp.challenge_cmd("submit",id,message)
+  await ctx.channel.send(res)
 
+@client.command()
+async def create(ctx):
+  
+  id = ctx.message.author.id
+  res = exp.challenge_cmd("create",id)
+  await ctx.channel.send(res)
+
+
+@client.command()
+async def score(ctx):
+  
+  id = ctx.message.author.id
+  res = exp.score(id)
+  await ctx.channel.send(res)
 
 client.run(os.getenv('TOKEN'))

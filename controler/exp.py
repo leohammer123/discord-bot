@@ -3,8 +3,7 @@ from ctftool.decode import *
 from challenge.show import *
 from api.basic_api import *
 from challenge.start import *
-
-
+from challenge.user_action import *
 
 def api_cmd(fc_name:str,*arg):
     """api_cmd : Handle all api command
@@ -101,11 +100,23 @@ def challenge_cmd(fc_name,*arg):
         return embed
     
     if fc_name == "score":
-        pass
+        text = score(int(arg[0]))
+        return text
     
     if fc_name == "start":
         text = start(int(arg[0]),arg[1])
         return text
+    
+    if fc_name == "submit":
+        
+        text = flag_validate(arg[1],int(arg[0]))
+        return text
+    
+    if fc_name == "create":
+        
+        text = creat_user(int(arg[0]))
+        return text    
+    
     
 def usage(cmd):
     pass
