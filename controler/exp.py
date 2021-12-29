@@ -91,8 +91,7 @@ def tool_cmd(fc_name,*arg):
     if fc_name == "dec2ascii":
         text = dec2ascii(int(arg[0]))
         return text 
-    
-    
+      
 def challenge_cmd(fc_name,*arg):
     
     if fc_name == "show":
@@ -116,7 +115,6 @@ def challenge_cmd(fc_name,*arg):
         
         text = creat_user(int(arg[0]))
         return text    
-    
-    
+       
 def usage(cmd):
     pass

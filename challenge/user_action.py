@@ -1,9 +1,6 @@
 from challenge.db import *
 import hashlib
 
-flag = "flag{base64_is_not_an_encryption}"
-
-
 def flag_validate(flag:str,id:int):
     """ flag_valiate : validate the flag
 
@@ -47,10 +44,9 @@ def flag_validate(flag:str,id:int):
     for r in record:
         if r =="0": 
             solve_level.append(0)
-        elif r=="1":
-            solve_level.append(1)   
         else:
-            return "impossible"
+            solve_level.append(1)   
+
     
     index = 0
     

@@ -24,8 +24,6 @@ def ch6(url:str)->str:
     except Exception as e:
         return str(e)
     
-    
-    
 def ch8(url:str)->str:
 
     cookie_dict = {"token":os.getenv('ch8-token'),"site":"https://challenge1002.000webhostapp.com/c8/"}
@@ -35,6 +33,3 @@ def ch8(url:str)->str:
         return "Server is online"
     else:
         return "sth are wrong"
-
-
-

@@ -15,7 +15,6 @@ async def on_ready():
   game = discord.Game('#help')
   await client.change_presence(status=discord.Status.online, activity=game)
 
-
 @client.event
 async def on_message_join(member):
     channel = client.get_channel(channel_id)
@@ -44,7 +43,6 @@ async def api(ctx,*arg):
   if type(n) == BytesIO:
      await ctx.channel.send(file=discord.File(n,'test.png'))
      
-     
 @client.command()
 async def challenge(ctx,*arg):
   try:
@@ -71,7 +69,6 @@ async def challenge(ctx,*arg):
   except Exception as e:
     await ctx.channel.send(str(e))
 
-
 @client.command()
 async def ctftool(ctx,*arg):
   try:
@@ -88,8 +85,6 @@ async def ctftool(ctx,*arg):
     
   except Exception as e:
     await ctx.channel.send(e)
-
-
 
 @client.command()
 async def clear(ctx,*arg1):
@@ -118,7 +113,6 @@ async def create(ctx):
   id = ctx.message.author.id
   res = exp.challenge_cmd("create",id)
   await ctx.channel.send(res)
-
 
 @client.command()
 async def score(ctx):

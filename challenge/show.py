@@ -26,4 +26,3 @@ def show(index:int)->embeds:
         return "This challenge havn't been released yet."
     except Exception as e:
         return str(e)
-

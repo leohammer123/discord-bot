@@ -42,4 +42,3 @@ def start(index:int,*args)->str:
     if index==None:
         
         return "missing index value"
-        
