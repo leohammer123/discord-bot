@@ -1,3 +1,5 @@
+import os
+
 flag = os.getenv('flag')
 
 def encrypt(s):
