@@ -1,3 +1,5 @@
+import os
+
 flag = os.getenv('flag')
 
 def encrypt(s):
@@ -20,4 +22,4 @@ def encrypt(s):
  
 print(encrypt(flag))
 
-# output : }31gbe_ugvj_enyvzvf_fv_fvug{tnys
+# output : }31gbe_bg_enyvzvf_fv_fvug{tnys
