@@ -24,7 +24,7 @@ def screenshot(url:str)->bytes:
   except Exception as e:
     return str(e)
   return data
-  
+
 def shorturl(url:str)->str:
   re_url = 'https://api.shrtco.de/v2/shorten?url='+ url
   r = json.loads(requests.get(re_url).text)

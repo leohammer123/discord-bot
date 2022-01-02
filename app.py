@@ -1,7 +1,6 @@
 import os
 from io import BytesIO
 import discord
-from discord.utils import async_all
 from controler import exp
 from discord.ext import commands
 
@@ -31,16 +30,16 @@ async def api(ctx,*arg):
     n = exp.api_cmd(arg1,arg2,arg3)
   except Exception as e:
     await ctx.channel.send(str(e))
-  
+
   if type(n) == tuple:
     for r in n:
-      if type(r)==type('str'):
+      if type(r) is str:
         await ctx.channel.send(str(r)) 
-      if type(r)==BytesIO:
+      if type(r) is BytesIO:
         await ctx.channel.send(file=discord.File(r,'test.png'))
-  if type(n)==type('str'):
+  if type(n) is str:
         await ctx.channel.send(str(n))
-  if type(n) == BytesIO:
+  if type(n) is BytesIO:
      await ctx.channel.send(file=discord.File(n,'test.png'))
      
 @client.command()
@@ -59,11 +58,11 @@ async def challenge(ctx,*arg):
       await ctx.channel.send(embed=n)
       
       
-    if type(n)==type('str'):
+    if type(n) is str:
           await ctx.channel.send(str(n))
           
           
-    if type(n) == BytesIO:
+    if type(n) is BytesIO:
       await ctx.channel.send(file=discord.File(n,'test.png'))
     
   except Exception as e:
@@ -116,7 +115,7 @@ async def create(ctx):
 
 @client.command()
 async def score(ctx):
-  
+
   id = ctx.message.author.id
   res = exp.score(id)
   await ctx.channel.send(res)
