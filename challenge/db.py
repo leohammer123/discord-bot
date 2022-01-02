@@ -4,7 +4,7 @@ db = sqlite3.connect('challenge\data\score.db')
 cursor = db.cursor()
 
 def creat_user(id:int):
-    
+
     if search(id):
         return "This discord id already have an account"
     

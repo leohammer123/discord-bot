@@ -17,9 +17,9 @@ def flag_validate(flag:str,id:int):
     flag = hashlib.sha256(flag.encode()).hexdigest()
     flaglist = open("challenge\data\\flaglist.txt").read().splitlines()
     try:
-        record = bin(search(id)[0][2])[2:].zfill(24) 
+        record = bin(search(id)[0][2])[2:].zfill(24)
     
-    except IndexError as e:
+    except IndexError:
         return "User not found \nPlease creat your account first , Use '#create'"
     
     """
@@ -42,7 +42,7 @@ def flag_validate(flag:str,id:int):
     """
 
     for r in record:
-        if r =="0": 
+        if r =="0":
             solve_level.append(0)
         else:
             solve_level.append(1)   

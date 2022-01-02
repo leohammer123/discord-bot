@@ -42,7 +42,7 @@ def api_cmd(fc_name:str,*arg):
             return text
         if rand == 5:
             text = Dogpic()
-            
+
 def tool_cmd(fc_name,*arg):
     """tool_cmd : Handle all ctf tool command
 
@@ -90,7 +90,7 @@ def tool_cmd(fc_name,*arg):
     
     if fc_name == "dec2ascii":
         text = dec2ascii(int(arg[0]))
-        return text 
+        return text
       
 def challenge_cmd(fc_name,*arg):
     

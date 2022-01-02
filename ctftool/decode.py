@@ -1,4 +1,4 @@
-from Crypto.Util.number import * 
+from Crypto.Util.number import *
 import requests
 import json
 import codecs
@@ -14,18 +14,10 @@ def rsapq(p:int , q:int , e:int , ct:int) -> int:
           return (b, 0, 1)
       else:
           g, y, x = egcd(b % a, a)
-          return (g, x - (b // a) * y, y)
-
-  def modinv(a, m):
-    g, x, y = egcd(a, m)
-    if g != 1:
-        raise Exception('modular inverse does not exist')
-    else:
-        return x % m
+          return x - (b // a)
   n = p * q
   phi = (p - 1) * (q - 1)
-  gcd, a, b = egcd(e, phi)
-  d = a
+  d = egcd(e, phi)
   pt = pow(ct, d, n)
   return pt
 
@@ -42,11 +34,10 @@ def factordb(n:int) -> str:
 
   return result
 
-def hex2ascii(hex:str)-> bytes:
-  return codecs.decode(hex,'hex')
+def hex2ascii(hex_string:str)-> bytes:
+  return codecs.decode(hex_string,'hex')
 
 def xor(plaintext:str,key:str)->bytes:
-  n = 0
   cipher = ''
   q = len(plaintext)%len(key)
   for r in plaintext:

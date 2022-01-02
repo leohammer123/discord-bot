@@ -5,7 +5,7 @@ flag = os.getenv('flag')
 def encrypt(s):
      alphabet = 'abcdefghijklmnopqrstuvwxyz'
      s = s.lower()
-     
+
      keyShift = 13
      strings = ''
      for i in s:
