@@ -1,5 +1,6 @@
+from operator import itemgetter
+import json
 from challenge.db import *
-import hashlib
 
 def flag_validate(flag:str,id:int):
     """ flag_valiate : validate the flag
@@ -14,8 +15,8 @@ def flag_validate(flag:str,id:int):
     
     
     solve_level = []
-    flag = hashlib.sha256(flag.encode()).hexdigest()
-    flaglist = open("challenge\data\\flaglist.txt").read().splitlines()
+    flaglist = open("challenge\\flaglist.txt").read().splitlines()
+    
     try:
         record = bin(search(id)[0][2])[2:].zfill(24)
     
@@ -56,13 +57,13 @@ def flag_validate(flag:str,id:int):
             
             if not(solve_level[index]):
                 
-                
                 solve_level[index]  = solve_level[index]+1
                 level = int(''.join(str(j) for j in solve_level),2)
-                
-                insert(id,50,level)
-                
-                return "Congrat you solve the challenge"
+                index += 1
+                n = json.loads(open("challenge\data\challenge_info.json",'r',encoding="utf-8").read())[index-1]
+                insert(id,n["score"],level)
+
+                return f"Congrat you solve \"{n['title']}\"\n Now your score is **{str(search(id)[0][1])}**"
                 
             else:
                 return "You have solved this challenge"
@@ -81,5 +82,4 @@ def create(id:int):
         
 
 def score(id:int):
-    
-     return f' Your score is {str(search(id)[0][1])}'
+    return f"Your score : {str(search(id)[0][1])}" 

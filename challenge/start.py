@@ -17,9 +17,9 @@ def start(index:int,*args)->str:
         res = ch6(args[0])
         
         if args[0]==None:
-            return "missing url"
+            return "**Missing url**"
         elif res==True:
-            return "Website content doesn't contain the word"
+            return "**Website content doesn't contain the word**"
         elif res==False:
             return "Your website pass the test , I have already send you the flag"
         else:
@@ -30,7 +30,7 @@ def start(index:int,*args)->str:
         res = ch8(args[0])
         
         if args[0]==None:
-            return "missing url"
+            return "**Missing url**"
         
         else:
             return res
@@ -41,4 +41,4 @@ def start(index:int,*args)->str:
         
     if index==None:
         
-        return "missing index value"
+        return "**Missing index value**"

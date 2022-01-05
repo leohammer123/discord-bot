@@ -1,13 +1,19 @@
 import os
 from io import BytesIO
 import discord
+from challenge.user_action import score as sc
+from discord.embeds import Embed
 from controler import exp
 from discord.ext import commands
+from discord.ext.commands import CommandNotFound
+from challenge.db import test
+from operator import itemgetter
 
 # Basic setting
-client = commands.Bot(command_prefix="#")
+intents = discord.Intents.default()
+intents.members = True
+client = commands.Bot(command_prefix="#",intents=intents)
 channel_id = 692690549487960155
-
 
 @client.event
 async def on_ready():
@@ -17,8 +23,8 @@ async def on_ready():
 @client.event
 async def on_message_join(member):
     channel = client.get_channel(channel_id)
-    embed=discord.Embed(title=f"Welcome {member.name}", description=f"Thanks for joining {member.guild.name}!") # F-Strings!
-    embed.set_thumbnail(url=member.avatar_url) # Set the embed's thumbnail to the member's avatar image!
+    embed=discord.Embed(title=f"Welcome {member.name}", description=f"Thanks for joining {member.guild.name}!")
+    embed.set_thumbnail(url=member.avatar_url)
     await channel.send(embed=embed)
 
 @client.command()
@@ -92,19 +98,22 @@ async def clear(ctx,*arg1):
     await ctx.channel.purge(limit=int(num)+1)
     
   except IndexError :
-    await ctx.channel.send('Error : No arguement')
+    await ctx.channel.send('**No arguement**')
   except ValueError :
-    await ctx.channel.send('Error : argument not an int.')
+    await ctx.channel.send('**argument not an int**')
   except Exception as e:
-    await ctx.channel.send(f'Error : {e}')
+    await ctx.channel.send(f'**Error : {str(e)}**')
 
 @client.command()
 async def submit(ctx,message):
   
   user = ctx.message.author
   id = user.id
+  channel = client.get_channel(channel_id)
   res = exp.challenge_cmd("submit",id,message)
-  await ctx.channel.send(res)
+  await ctx.reply(res,mention_author=True)
+  await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
+  await channel.send(res)
 
 @client.command()
 async def create(ctx):
@@ -115,9 +124,41 @@ async def create(ctx):
 
 @client.command()
 async def score(ctx):
+  try:
+    score_board = test()
+    score_board = sorted(score_board,key=itemgetter(1),reverse=True)
+    index = 0
+    
+    for r in score_board:
+      
+      r = list(r)
+      user = client.get_user(score_board[index][0])
+      if user is None :
+        r.append("Unknown User")
+      else:
+        r.append(user)
+        
+      score_board[index] = r
+      index += 1
+      
+    names = ''
+    
 
-  id = ctx.message.author.id
-  res = exp.score(id)
-  await ctx.channel.send(res)
+    for index in range(len(score_board)):
+      if type(score_board[index][3]) is str:
+        names += f'{index+1}#<{score_board[index][3]}> -with {score_board[index][1]}\n'
+      else:
+        names += f'{index+1}#<{score_board[index][3].mention}> -with {score_board[index][1]}\n'
+        
+    embed = discord.Embed(title="Leaderboard")
+    embed.add_field(name="Names", value=names, inline=False)
+    embed.set_footer(text=f"{sc(ctx.message.author.id)}")
+    await ctx.send(embed=embed)
+  except Exception as e:
+    print(e)
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, CommandNotFound):
+        await ctx.channel.send(f"**{ctx.message.content} is not a valid command**")
 
 client.run(os.getenv('TOKEN'))
