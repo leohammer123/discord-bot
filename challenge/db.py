@@ -51,5 +51,3 @@ def test():
     query = f"SELECT * FROM SCOREBOARD"
     
     return cursor.execute(query).fetchall()
-
-print(test())

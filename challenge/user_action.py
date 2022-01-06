@@ -1,4 +1,3 @@
-from operator import itemgetter
 import json
 from challenge.db import *
 

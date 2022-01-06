@@ -18,6 +18,7 @@ channel_id = 692690549487960155
 @client.event
 async def on_ready():
   game = discord.Game('#help')
+  print("bot start -----------------\n")
   await client.change_presence(status=discord.Status.online, activity=game)
 
 @client.event
@@ -111,10 +112,12 @@ async def submit(ctx,message):
   id = user.id
   channel = client.get_channel(channel_id)
   res = exp.challenge_cmd("submit",id,message)
-  await ctx.reply(res,mention_author=True)
-  await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
-  await channel.send(res)
-
+  if res.startswith("Congrat"):
+    await ctx.reply(res,mention_author=True)
+    await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
+    await channel.send(res)
+  else:
+    await ctx.reply(res,mention_author=True)
 @client.command()
 async def create(ctx):
   
