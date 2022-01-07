@@ -71,6 +71,12 @@ def tool_cmd(fc_name,*arg):
             return "**Missing one argument**"
         text = bass64(arg[0])
         return text
+
+    if fc_name == "base32":
+        if arg[0] is None:
+            return "**Missing one argument**"
+        text = bass32(arg[0])
+        return text
     
     if fc_name == "dec2ascii":
         if arg[0] is None:
@@ -96,12 +102,6 @@ def tool_cmd(fc_name,*arg):
         text = hex2ascii(arg[0])
         return str(text)
     
-    if fc_name == "base32":
-        if arg[0] is None:
-            return "**Missing one argument**"
-        text = bass32(arg[0])
-        return text
-    
     if fc_name == "xor":
         if arg[0] is None or arg[1] is None:
             return "**Missing argument(require 2 arguments)**"
@@ -119,12 +119,6 @@ def tool_cmd(fc_name,*arg):
             return "**Missing one argument**"
         text= byte_long(arg[0].encode())
         return str(text)
-    
-    if fc_name == "dec2ascii":
-        if arg[0] is None:
-            return "**Missing one argument**"
-        text = dec2ascii(int(arg[0]))
-        return text
       
     return f"**ctftool command doesn't contain {fc_name}**"
 

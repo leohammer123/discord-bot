@@ -5,6 +5,7 @@ Discord Bot is a bot that you can invite to your discord server and do some cool
 ## Features
 
 - Original CTF challenges
+- A bunch of useless api
 
 ## Invitation
 
