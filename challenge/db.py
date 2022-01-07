@@ -6,7 +6,7 @@ cursor = db.cursor()
 def creat_user(id:int):
 
     if search(id):
-        return "This discord id already have an account"
+        return "**This discord id already have an account**"
     
     
     query = f"INSERT INTO SCOREBOARD (SCORE,DC_ID,LEVEL) VALUES('{0}','{id}','{0}')"
@@ -37,7 +37,7 @@ def insert(id:int,score:int,level:int):
         res = cursor.execute(query).fetchall()
         
         if not(res):
-            return "User not found"
+            return "**User not found**"
 
         query = f"UPDATE SCOREBOARD SET SCORE=SCORE+'{score}', LEVEL='{level}' WHERE DC_ID='{id}'"
         cursor.execute(query)

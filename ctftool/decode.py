@@ -57,7 +57,5 @@ def byte_long(txt:bytes)->int:
   return bytes_to_long(txt)
 
 def dec2ascii(num:int)->str:
-  ascii_text = ''
-  for n in num:
-    ascii_text+=chr(int(n))
+  ascii_text = chr(num)
   return ascii_text
