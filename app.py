@@ -76,7 +76,7 @@ async def challenge(ctx,*arg):
     await ctx.channel.send(str(e))
 
 @client.command()
-async def ctftool(ctx,*arg):
+async def tool(ctx,*arg):
   try:
     
     arg1 = arg[0]
