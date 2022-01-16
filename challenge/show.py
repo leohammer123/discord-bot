@@ -14,7 +14,7 @@ def show(index:int)->embeds:
     """
     try:   
          
-        n = json.loads(open("challenge\data\challenge_info.json",'r',encoding="utf-8").read())[index-1]
+        n = json.loads(open("./challenge/data/challenge_info.json",'r',encoding="utf-8").read())[index-1]
     
         embed=discord.Embed(title=n["title"], description=n["description"],url=n["link"],color=0x781717)
         embed.set_author(name=n["author"],url=n["author-url"],icon_url=n["icon-url"])

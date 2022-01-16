@@ -14,7 +14,7 @@ def flag_validate(flag:str,id:int):
     
     
     solve_level = []
-    flaglist = open("challenge\\flaglist.txt").read().splitlines()
+    flaglist = open("./challenge/flaglist.txt").read().splitlines()
     
     try:
         record = bin(search(id)[0][2])[2:].zfill(24)
@@ -59,7 +59,7 @@ def flag_validate(flag:str,id:int):
                 solve_level[index]  = solve_level[index]+1
                 level = int(''.join(str(j) for j in solve_level),2)
                 index += 1
-                n = json.loads(open("challenge\data\challenge_info.json",'r',encoding="utf-8").read())[index-1]
+                n = json.loads(open("./challenge/data/challenge_info.json",'r',encoding="utf-8").read())[index-1]
                 insert(id,n["score"],level)
 
                 return f"Congrat you solve \"{n['title']}\"\n Now your score is **{str(search(id)[0][1])}**"

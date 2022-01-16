@@ -8,7 +8,7 @@ def ch6(url:str)->str:
 
         if res.status_code==200:
             if res.text.find("<h1>Hello world</h1>")!=-1:
-                requests.get(url,params={"flag":os.getenv('ch7-flag')})
+                requests.get(url,params={"flag":os.getenv('CH7')})
                 return False
             return True
         else:
@@ -26,7 +26,7 @@ def ch6(url:str)->str:
     
 def ch8(url:str)->str:
 
-    cookie_dict = {"token":os.getenv('ch8-token'),"site":"https://challenge1002.000webhostapp.com/c8/"}
+    cookie_dict = {"token":os.getenv('CH8'),"site":"https://challenge1002.000webhostapp.com/c8/"}
     res = requests.get(url,cookies=cookie_dict)
     
     if res.status_code==200:

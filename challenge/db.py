@@ -1,6 +1,6 @@
 import sqlite3
 
-db = sqlite3.connect('challenge\data\score.db')
+db = sqlite3.connect('./challenge/data/score.db')
 cursor = db.cursor()
 
 def creat_user(id:int):

@@ -3,7 +3,7 @@ from io import BytesIO
 import discord
 from challenge.user_action import score as sc
 from discord.embeds import Embed
-from controler import exp
+from controller import exp
 from discord.ext import commands
 from discord.ext.commands import CommandNotFound
 from challenge.db import test
@@ -107,17 +107,20 @@ async def clear(ctx,*arg1):
 
 @client.command()
 async def submit(ctx,message):
-  
-  user = ctx.message.author
-  id = user.id
-  channel = client.get_channel(channel_id)
-  res = exp.challenge_cmd("submit",id,message)
-  if res.startswith("Congrat"):
-    await ctx.reply(res,mention_author=True)
-    await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
-    await channel.send(res)
-  else:
-    await ctx.reply(res,mention_author=True)
+    try:
+        user = ctx.message.author
+        id = user.id
+        channel = client.get_channel(channel_id)
+        res = exp.challenge_cmd("submit",id,message)
+        if res.startswith("Congrat"):
+            await ctx.reply(res,mention_author=True)
+            await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
+            await channel.send(res)
+
+        else:
+            await ctx.reply(res,mention_author=True)
+    except Exception as e:
+        print(e)
 @client.command()
 async def create(ctx):
   
