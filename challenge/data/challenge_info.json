@@ -38,7 +38,7 @@
         "difficulty" : "eazy",
         "category" : "Crypto",
         "description" : "WW91IGtub3cgaG93IHRvIHNvbHZlIHRoaXM=",
-        "link" : "https://github.com/leohammer123/discord-bot/blob/master/challenge/src/ch3-cipher.txt",
+        "link" : "http://ifstudio.ddns.net/data/ch3-cipher.txt",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
@@ -48,7 +48,7 @@
         "difficulty" : "medium",
         "category" : "Crypto",
         "description" : "Online tool couldn't solve it ---",
-        "link" : "https://github.com/leohammer123/discord-bot/blob/master/challenge/src/4.py",
+        "link" : "http://ifstudio.ddns.net/data/4.py",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
@@ -58,7 +58,7 @@
         "difficulty":"medium",
         "category" : "Misc",
         "description": "Just build a website ,I will give you the flag.",
-        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/6.py",
+        "link":"http://ifstudio.ddns.net/data/6.py",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
@@ -79,7 +79,7 @@
         "difficulty":"eazy",
         "category":"Web",
         "description":"I made my own checker ,it can use to check if a website is online or not",
-        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/8.py",
+        "link":"http://ifstudio.ddns.net/data/8.py",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
         
@@ -90,7 +90,7 @@
         "difficulty":"medium",
         "category":"Crypto",
         "description":"Everyone knows xor encryption ,but do you know what is a not encryption",
-        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/9.py",
+        "link":"http://ifstudio.ddns.net/data/9.py",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },
@@ -101,7 +101,7 @@
         "difficulty":"eazy",
         "category":"Web",
         "description":"Hint : The flag is located at flag.php",
-        "link":"https://github.com/leohammer123/discord-bot/blob/master/challenge/src/10.php",
+        "link":"http://ifstudio.ddns.net/data/10.php",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
     },{
@@ -127,5 +127,16 @@
         "link":"https://forms.gle/kaZo3iUX8Bvc3gL37",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
+    },{
+        "title":"Crack Me(.bat version)",
+        "score":467,
+        "author":"e04qqq",
+        "category":"Reverse",
+        "difficulty":"medium",
+        "description":"Find correct password (.bat file only can be run at Windows computer ,virtualbox will help)",
+        "link":"https://forms.gle/kaZo3iUX8Bvc3gL37",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
+
     }
 ]
