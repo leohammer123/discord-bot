@@ -115,7 +115,6 @@ async def submit(ctx,message):
         if res.startswith("Congrat"):
             await ctx.reply(res,mention_author=True)
             await ctx.message.add_reaction('\N{WHITE HEAVY CHECK MARK}')
-            await channel.send(res)
 
         else:
             await ctx.reply(res,mention_author=True)
