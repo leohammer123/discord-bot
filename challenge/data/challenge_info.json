@@ -17,7 +17,7 @@
         "difficulty" : "eazy",
         "category" : "Web",
         "description" : "Go to the website and buy flag",
-        "link" : "https://challenge1002.000webhostapp.com/c1/index.php",
+        "link" : "http://ifstudio.ddns.net:8000",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
 
@@ -57,7 +57,7 @@
         "author":"e04qqq",
         "difficulty":"medium",
         "category" : "Misc",
-        "description": "Just build a website ,I will give you the flag.",
+        "description": "Just build a website ,I will give you the flag, Use **#challenge start 6 {url}**",
         "link":"http://ifstudio.ddns.net/data/6.py",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
@@ -78,7 +78,7 @@
         "author":"e04qqq",
         "difficulty":"eazy",
         "category":"Web",
-        "description":"I made my own checker ,it can use to check if a website is online or not",
+        "description":"I made my own checker ,it can use to check if a website is online or not, Use **#challenge start 8 {url}**",
         "link":"http://ifstudio.ddns.net/data/8.py",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
@@ -112,7 +112,7 @@
         "difficulty":"eazy",
         "category":"Web",
         "description":"How Good Are Your Eyes?",
-        "link":"https://challenge1002.000webhostapp.com/c11/index.html",
+        "link":"http://ifstudio.ddns.net",
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
 
