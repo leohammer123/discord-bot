@@ -149,5 +149,16 @@
         "author-url" : "https://github.com/leohammer123",
         "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
 
+    },{
+        "title":"Discord Hacker",
+        "score":399,
+        "author":"e04qqq",
+        "category":"Misc",
+        "difficulty":"medium",
+        "description":"I made a project about discord.py, I wish i didn't make any silly mistake",
+        "link":"http://ifstudio.ddns.net/data/14.zip",
+        "author-url" : "https://github.com/leohammer123",
+        "icon-url" : "https://avatars.githubusercontent.com/u/66953227?s=40&v=4"
+
     }
 ]
